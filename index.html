@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Mingguo Luo — Senior Backend / Full-Stack Engineer. Cloud-native, distributed systems, Go / C++ / Python. Available for freelance & remote work.">
+	<title>Mingguo Luo — Backend &amp; Full-Stack Engineer</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body data-theme="light">
+
+	<!-- ===================== TOP BAR ===================== -->
+	<header class="topbar">
+		<a href="#top" class="brand">
+			<span class="brand-mark">Mingguo</span>
+			<span class="brand-name" data-en="Mingguo Luo" data-zh="罗明国">Mingguo Luo</span>
+		</a>
+		<nav class="topnav">
+			<a href="#about" data-en="About" data-zh="关于">About</a>
+			<a href="#skills" data-en="Skills" data-zh="技能">Skills</a>
+			<a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
+			<a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
+			<a href="#education" data-en="Education" data-zh="教育">Education</a>
+		</nav>
+		<div class="topbar-actions">
+			<button id="langToggle" class="pill" title="Switch language">
+				<span data-en="中文" data-zh="EN">中文</span>
+			</button>
+			<button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+				<span class="theme-sun">☀️</span><span class="theme-moon">🌙</span>
+			</button>
+		</div>
+	</header>
+
+	<main id="top">
+
+		<!-- ===================== HERO ===================== -->
+		<section class="hero">
+			<div class="hero-inner">
+				<img src="img/indonesia_travel.jpg" alt="Mingguo Luo" class="avatar">
+				<div class="hero-text">
+					<p class="eyebrow" data-en="Available for freelance &amp; remote work" data-zh="可接受远程 / 自由职业合作">Available for freelance &amp; remote work</p>
+					<h1 data-en="Mingguo Luo" data-zh="罗明国">Mingguo Luo</h1>
+					<h2 class="role" data-en="Senior Backend &amp; Full-Stack Engineer" data-zh="资深后端 / 全栈工程师">Senior Backend &amp; Full-Stack Engineer</h2>
+					<p class="tagline"
+						data-en="I help companies build industrial-grade cloud-native &amp; distributed systems — from API gateways and config centers to high-performance database and network kernels."
+						data-zh="我帮助企业打造工业级的云原生与分布式系统 —— 从 API 网关、配置中心，到高性能数据库与网络协议栈内核。">I help companies build industrial-grade cloud-native &amp; distributed systems — from API gateways and config centers to high-performance database and network kernels.</p>
+
+					<div class="chips">
+						<span class="chip">🧭 <span data-en="6+ years experience" data-zh="6 年以上经验">6+ years experience</span></span>
+						<span class="chip">🌍 <span data-en="Shenzhen, China · UTC+8" data-zh="中国深圳 · UTC+8">Shenzhen, China · UTC+8</span></span>
+						<span class="chip">💬 <span data-en="Fluent English (read / write / speak)" data-zh="流利英语（读写听说）">Fluent English (read / write / speak)</span></span>
+					</div>
+
+					<div class="cta-row">
+						<a class="btn btn-primary" href="mailto:lmg543137933@gmail.com">
+							<span data-en="Hire me" data-zh="联系我">Hire me</span>
+						</a>
+						<a class="btn btn-ghost" href="https://github.com/luomingguo" target="_blank" rel="noopener">GitHub</a>
+						<a class="btn btn-ghost" id="printBtn" href="#" data-en="Download PDF" data-zh="下载 PDF">Download PDF</a>
+					</div>
+
+					<div class="contact-line">
+						<a href="mailto:lmg543137933@gmail.com">✉️ lmg543137933@gmail.com</a>
+						<span class="sep">·</span>
+						<a href="https://github.com/luomingguo" target="_blank" rel="noopener">🔗 github.com/luomingguo</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===================== STATS ===================== -->
+		<section class="stats">
+			<div class="stat">
+				<div class="stat-num">6+</div>
+				<div class="stat-label" data-en="Years building systems" data-zh="系统研发经验（年）">Years building systems</div>
+			</div>
+			<div class="stat">
+				<div class="stat-num">12K</div>
+				<div class="stat-label" data-en="QPS on self-built KV store" data-zh="自研 KV 存储 QPS">QPS on self-built KV store</div>
+			</div>
+			<div class="stat">
+				<div class="stat-num">&lt;10ms</div>
+				<div class="stat-label" data-en="P99 latency achieved" data-zh="P99 延迟">P99 latency achieved</div>
+			</div>
+			<div class="stat">
+				<div class="stat-num">4</div>
+				<div class="stat-label" data-en="Systems built from scratch" data-zh="从零构建的系统">Systems built from scratch</div>
+			</div>
+		</section>
+
+		<!-- ===================== ABOUT ===================== -->
+		<section id="about" class="block">
+			<h3 class="block-title"><span class="num">01</span> <span data-en="About me" data-zh="关于我">About me</span></h3>
+			<p class="lead"
+				data-en="Hi — I'm a backend engineer with 6+ years of hands-on experience shipping production cloud-native and distributed systems. I write high-performance, reusable code in Go (5+ yrs), C/C++, Python and JavaScript. My strength is software &amp; systems design: I love digging into the internals of languages, operating systems and frameworks."
+				data-zh="你好 —— 我是一名拥有 6 年以上实战经验的后端工程师，长期负责生产级云原生与分布式系统的研发与上线。我能用 Go（5 年以上）、C/C++、Python、JavaScript 编写高性能、可复用的代码。我的强项是软件与系统设计，热衷于钻研编程语言、操作系统与框架的底层原理。">Hi — I'm a backend engineer with 6+ years of hands-on experience shipping production cloud-native and distributed systems. I write high-performance, reusable code in Go (5+ yrs), C/C++, Python and JavaScript. My strength is software &amp; systems design: I love digging into the internals of languages, operating systems and frameworks.</p>
+			<p class="lead"
+				data-en="What sets me apart from most backend developers is full-cycle DevOps experience (Kubernetes, Docker, CI/CD, Prometheus, registries) — I've led the build-out of an on-premise private cloud. I'm reliable, communicate clearly in English, and I care about delivering products with real technical depth and business impact."
+				data-zh="相比多数后端开发者，我的差异化优势是具备全流程 DevOps 经验（Kubernetes、Docker、CI/CD、Prometheus、镜像仓库），并主导过机房私有云的搭建。我交付可靠、英文沟通顺畅，专注于打造具有真正技术深度与商业价值的产品。">What sets me apart from most backend developers is full-cycle DevOps experience (Kubernetes, Docker, CI/CD, Prometheus, registries) — I've led the build-out of an on-premise private cloud. I'm reliable, communicate clearly in English, and I care about delivering products with real technical depth and business impact.</p>
+		</section>
+
+		<!-- ===================== UPWORK PITCH ===================== -->
+		<section id="pitch" class="pitch">
+			<div class="pitch-badge" data-en="★ Why clients hire me" data-zh="★ 为什么客户选择我">★ Why clients hire me</div>
+			<p class="pitch-lead"
+				data-en="Need a backend that won't fall over at 3 a.m.? That's exactly what I build. For 6+ years I've shipped production cloud-native systems that stay fast and stable under real load — the kind of work where a single bad design decision costs weeks. I bring that same rigor to your project, whether it's a brand-new API, a service that needs rescuing, or a hard performance problem nobody else has cracked."
+				data-zh="需要一个凌晨三点也不会崩的后端？这正是我的专长。6 年多来，我交付的生产级云原生系统在真实负载下依然快速、稳定 —— 在这种工作里，一个糟糕的设计决策就可能让团队损失数周。无论你是要从零开发新 API、拯救一个濒临崩溃的服务，还是攻克别人解决不了的性能难题，我都会用同样的严谨对待你的项目。">Need a backend that won't fall over at 3&nbsp;a.m.? That's exactly what I build. For 6+ years I've shipped production cloud-native systems that stay fast and stable under real load — the kind of work where a single bad design decision costs weeks. I bring that same rigor to your project, whether it's a brand-new API, a service that needs rescuing, or a hard performance problem nobody else has cracked.</p>
+
+			<div class="value-grid">
+				<div class="value-card">
+					<span class="value-ico">⚡</span>
+					<h4 data-en="Performance you can measure" data-zh="看得见的性能">Performance you can measure</h4>
+					<p data-en="I don't hand-wave. My systems hit 12K QPS at &lt;10ms P99 — I'll bring the same benchmark-driven discipline to yours." data-zh="我不靠空谈。我的系统能做到 12K QPS、P99 &lt;10ms —— 我会把同样以基准测试驱动的严谨带到你的项目。">I don't hand-wave. My systems hit 12K QPS at &lt;10ms P99 — I'll bring the same benchmark-driven discipline to yours.</p>
+				</div>
+				<div class="value-card">
+					<span class="value-ico">🛠️</span>
+					<h4 data-en="End-to-end ownership" data-zh="端到端负责">End-to-end ownership</h4>
+					<p data-en="Architecture, code, tests, CI/CD, deploy and monitoring — I cover the whole pipeline so you don't have to juggle five freelancers." data-zh="架构、编码、测试、CI/CD、部署到监控 —— 我覆盖整条流水线，你无需同时协调五个外包。">Architecture, code, tests, CI/CD, deploy and monitoring — I cover the whole pipeline so you don't have to juggle five freelancers.</p>
+				</div>
+				<div class="value-card">
+					<span class="value-ico">💬</span>
+					<h4 data-en="Clear, low-friction comms" data-zh="清晰省心的沟通">Clear, low-friction comms</h4>
+					<p data-en="Fluent English, no-surprise updates, and honest estimates. You'll always know where your project stands." data-zh="流利英语、无意外的进度同步、诚实的工期评估。你随时清楚项目进展。">Fluent English, no-surprise updates, and honest estimates. You'll always know where your project stands.</p>
+				</div>
+				<div class="value-card">
+					<span class="value-ico">🔬</span>
+					<h4 data-en="Depth most devs skip" data-zh="多数人不具备的深度">Depth most devs skip</h4>
+					<p data-en="I've built databases, TCP/IP stacks and an OS from scratch. When your problem gets deep, I'm already comfortable down there." data-zh="我从零写过数据库、TCP/IP 协议栈和操作系统。当问题深入到底层，我早已游刃有余。">I've built databases, TCP/IP stacks and an OS from scratch. When your problem gets deep, I'm already comfortable down there.</p>
+				</div>
+			</div>
+
+			<div class="pitch-trust">
+				<span class="trust-item">⏱️ <span data-en="Replies within 24 hours" data-zh="24 小时内回复">Replies within 24 hours</span></span>
+				<span class="trust-item">📦 <span data-en="Clean, documented, handover-ready code" data-zh="整洁、有文档、可交接的代码">Clean, documented, handover-ready code</span></span>
+				<span class="trust-item">🤝 <span data-en="Free 30-min scoping call" data-zh="免费 30 分钟需求沟通">Free 30-min scoping call</span></span>
+			</div>
+
+			<a class="btn btn-primary pitch-cta" href="mailto:lmg543137933@gmail.com">
+				<span data-en="Let's talk about your project →" data-zh="聊聊你的项目 →">Let's talk about your project →</span>
+			</a>
+		</section>
+
+		<!-- ===================== SKILLS ===================== -->
+		<section id="skills" class="block">
+			<h3 class="block-title"><span class="num">02</span> <span data-en="Skills &amp; Tech stack" data-zh="技能与技术栈">Skills &amp; Tech stack</span></h3>
+			<div class="skills-grid">
+				<div class="skill-card">
+					<h4 data-en="Languages" data-zh="编程语言">Languages</h4>
+					<div class="tags">
+						<span class="tag tag-strong">Go</span>
+						<span class="tag">C / C++</span>
+						<span class="tag">Python</span>
+						<span class="tag">JavaScript / TS</span>
+					</div>
+				</div>
+				<div class="skill-card">
+					<h4 data-en="Distributed &amp; Backend" data-zh="分布式与后端">Distributed &amp; Backend</h4>
+					<div class="tags">
+						<span class="tag">Microservices</span>
+						<span class="tag">API Gateway</span>
+						<span class="tag">Raft / Consensus</span>
+						<span class="tag">gRPC / RPC</span>
+						<span class="tag">Message Queue</span>
+						<span class="tag">High Availability</span>
+					</div>
+				</div>
+				<div class="skill-card">
+					<h4 data-en="Data &amp; Storage" data-zh="数据与存储">Data &amp; Storage</h4>
+					<div class="tags">
+						<span class="tag">MongoDB</span>
+						<span class="tag">Redis</span>
+						<span class="tag">RDBMS internals</span>
+						<span class="tag">Transactions / MVCC</span>
+					</div>
+				</div>
+				<div class="skill-card">
+					<h4 data-en="Cloud &amp; DevOps" data-zh="云与 DevOps">Cloud &amp; DevOps</h4>
+					<div class="tags">
+						<span class="tag tag-strong">Kubernetes</span>
+						<span class="tag">Docker</span>
+						<span class="tag">CI/CD</span>
+						<span class="tag">Prometheus</span>
+						<span class="tag">Private Cloud</span>
+					</div>
+				</div>
+				<div class="skill-card">
+					<h4 data-en="Systems &amp; Networking" data-zh="系统与网络">Systems &amp; Networking</h4>
+					<div class="tags">
+						<span class="tag">TCP/IP stack</span>
+						<span class="tag">DPDK</span>
+						<span class="tag">Linux / ARM</span>
+						<span class="tag">Embedded / RTOS</span>
+						<span class="tag">Coroutines</span>
+					</div>
+				</div>
+				<div class="skill-card">
+					<h4 data-en="Engineering practice" data-zh="工程实践">Engineering practice</h4>
+					<div class="tags">
+						<span class="tag">System design</span>
+						<span class="tag">Performance tuning</span>
+						<span class="tag">DSL / Schema design</span>
+						<span class="tag">Automated testing</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===================== EXPERIENCE ===================== -->
+		<section id="experience" class="block">
+			<h3 class="block-title"><span class="num">03</span> <span data-en="Work experience" data-zh="工作经历">Work experience</span></h3>
+
+			<div class="timeline">
+				<article class="tl-item">
+					<div class="tl-head">
+						<div>
+							<h4 data-en="Sangfor Technologies" data-zh="深信服科技股份有限公司">Sangfor Technologies</h4>
+							<p class="tl-role" data-en="Cloud Platform Engineer · SASE R&amp;D &amp; Middle-Platform Dept." data-zh="云平台开发 · SASE 研发部 &amp; 组件中台部">Cloud Platform Engineer · SASE R&amp;D &amp; Middle-Platform Dept.</p>
+						</div>
+						<span class="tl-date">2021.09 – 2025.04</span>
+					</div>
+					<p class="tl-summary"
+						data-en="Core engineer on China's first production cloud-native, in-house SASE platform — migrating a security-stack business from hardware delivery to SaaS. Stayed with the product from project kickoff through launch and steady iteration."
+						data-zh="参与国内首个落地的云原生自研 SASE 解决方案的核心研发 —— 将原本的安全堆栈业务从硬件交付转型为 SaaS 交付，全程跟随项目立项、上线到稳定迭代。">Core engineer on China's first production cloud-native, in-house SASE platform — migrating a security-stack business from hardware delivery to SaaS. Stayed with the product from project kickoff through launch and steady iteration.</p>
+					<ul class="bullets">
+						<li data-en="Owned the control plane in a multi-tenant, microservice architecture: designed and built a distributed API gateway and configuration center with high availability — from research and design to coding, automated testing and ops tooling."
+							data-zh="负责多租户、微服务架构下的控制面：从方案预研、设计、编码到自动化测试与运维工具开发，实现了高可用的分布式 API 网关与配置中心。">Owned the control plane in a multi-tenant, microservice architecture: designed and built a distributed API gateway and configuration center with high availability — from research and design to coding, automated testing and ops tooling.</li>
+						<li data-en="Co-designed a domain-specific Schema language (protobuf-like) to standardize configuration across services."
+							data-zh="参与领域特定语言 Schema（类似 protobuf）的设计，统一各服务的配置描述。">Co-designed a domain-specific Schema language (protobuf-like) to standardize configuration across services.</li>
+						<li data-en="Built out the ops platform and CI/CD pipelines that hardened quality for a weekly release cadence."
+							data-zh="参与运维平台研发与 CI/CD 流水线搭建，为「一周一迭代」的发布节奏加固质量能力。">Built out the ops platform and CI/CD pipelines that hardened quality for a weekly release cadence.</li>
+						<li data-en="Tech: Kubernetes, Docker, MQ, Redis, MongoDB, C/C++, Go (primary), Python (testing &amp; DevOps)."
+							data-zh="技术栈：Kubernetes、Docker、MQ、Redis、MongoDB、C/C++、Go（主要）、Python（测试与 DevOps）。">Tech: Kubernetes, Docker, MQ, Redis, MongoDB, C/C++, Go (primary), Python (testing &amp; DevOps).</li>
+					</ul>
+					<div class="awards">
+						<span class="award">🏆 <span data-en="Half-year Outstanding Employee award" data-zh="半年度优秀员工">Half-year Outstanding Employee award</span></span>
+						<span class="award">🏅 <span data-en="Company-wide Code Review award" data-zh="全员质量管理 Code Review 奖">Company-wide Code Review award</span></span>
+					</div>
+				</article>
+
+				<article class="tl-item">
+					<div class="tl-head">
+						<div>
+							<h4 data-en="XAG (XAircraft)" data-zh="极飞科技">XAG (XAircraft)</h4>
+							<p class="tl-role" data-en="Embedded Software Engineer · Perception &amp; Control Dept., Guangzhou" data-zh="嵌入式软件开发工程师 · 感知与控制部，广州">Embedded Software Engineer · Perception &amp; Control Dept., Guangzhou</p>
+						</div>
+						<span class="tl-date">2018.09 – 2021.09</span>
+					</div>
+					<p class="tl-summary"
+						data-en="At an agri-tech company, I led R&amp;D of the onboard system platform for crop-protection drones and unmanned ground vehicles."
+						data-zh="在农业科技公司，负责植保无人机与无人车机载系统平台的研发工作。">At an agri-tech company, I led R&amp;D of the onboard system platform for crop-protection drones and unmanned ground vehicles.</p>
+					<ul class="bullets">
+						<li data-en="Built a lightweight, customizable general-purpose software platform on ARM (a ROS-like robotics OS) that stably hosted algorithm modules under extreme performance demands; developed sensor device drivers and the networking layer."
+							data-zh="在 ARM 架构下实现轻量级、可定制的通用软件平台（类机器人操作系统 ROS），在追求极致性能的同时稳定搭载算法等业务模块；开发各类传感器设备驱动与网络模块。">Built a lightweight, customizable general-purpose software platform on ARM (a ROS-like robotics OS) that stably hosted algorithm modules under extreme performance demands; developed sensor device drivers and the networking layer.</li>
+						<li data-en="Responsible for architecture design, interface design and custom protocol design; contributed to adaptive mesh networking for device coordination."
+							data-zh="负责架构设计、接口设计与定制协议设计；参与自适应组网通信以实现设备联动。">Responsible for architecture design, interface design and custom protocol design; contributed to adaptive mesh networking for device coordination.</li>
+						<li data-en="Drove platform performance optimization — co-authored a task scheduler that switches tasks via coroutines instead of time slices, yielding measurable performance gains."
+							data-zh="主导平台性能优化；协助编写任务调度模块，用协程切换任务而非时间片，取得明显的性能提升。">Drove platform performance optimization — co-authored a task scheduler that switches tasks via coroutines instead of time slices, yielding measurable performance gains.</li>
+					</ul>
+					<div class="awards">
+						<span class="award">🏆 <span data-en="Company Product Quality Award (top 10%)" data-zh="公司产品质量奖（前 10%）">Company Product Quality Award (top 10%)</span></span>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- ===================== PROJECTS ===================== -->
+		<section id="projects" class="block">
+			<h3 class="block-title"><span class="num">04</span> <span data-en="Selected projects" data-zh="精选项目">Selected projects</span></h3>
+			<div class="projects-grid">
+
+				<article class="proj-card">
+					<div class="proj-head">
+						<h4 data-en="Distributed KV Store" data-zh="分布式 KV 存储系统">Distributed KV Store</h4>
+						<a class="repo-link" href="https://github.com/luomingguo/65840_distribution_systems" target="_blank" rel="noopener" aria-label="GitHub repo">↗ Repo</a>
+					</div>
+					<p data-en="A distributed key/value store built from scratch to master the PACELC trade-offs and real-world failure diagnosis. Implements leader election, log replication, crash recovery and shard migration."
+						data-zh="为深入理解 PACELC 理论及分布式环境下的问题诊断能力，从零构建的分布式键值存储系统，实现了 Leader 选举、日志复制、崩溃恢复与分片迁移等核心组件。">A distributed key/value store built from scratch to master the PACELC trade-offs and real-world failure diagnosis. Implements leader election, log replication, crash recovery and shard migration.</p>
+					<div class="metrics">
+						<span class="metric"><b>12K</b> <span data-en="QPS" data-zh="QPS">QPS</span></span>
+						<span class="metric"><b>&lt;10ms</b> <span data-en="P99 latency" data-zh="P99 延迟">P99 latency</span></span>
+						<span class="metric"><b>4C / 8G</b> <span data-en="test env" data-zh="测试环境">test env</span></span>
+					</div>
+					<div class="tags small">
+						<span class="tag">Go</span><span class="tag">Raft</span><span class="tag">Sharding</span>
+					</div>
+				</article>
+
+				<article class="proj-card">
+					<div class="proj-head">
+						<h4 data-en="TinyDB — RDBMS from scratch" data-zh="TinyDB — 从零构建关系型数据库">TinyDB — RDBMS from scratch</h4>
+						<a class="repo-link" href="https://github.com/luomingguo/TinyDB" target="_blank" rel="noopener" aria-label="GitHub repo">↗ Repo</a>
+					</div>
+					<p class="proj-date">2025.05 – <span data-en="present" data-zh="至今">present</span></p>
+					<p data-en="A complete RDBMS built from the ground up in Go to master database-kernel internals: operator algorithms, buffer-pool management, write-ahead logging &amp; crash recovery, transaction &amp; lock management, and concurrent access."
+						data-zh="基于 Go 从零构建的完整关系型数据库，用以掌握数据库内核技术：实现不同的算子算法、缓冲池管理、日志记录与故障恢复、事务管理、锁管理与并发访问控制。">A complete RDBMS built from the ground up in Go to master database-kernel internals: operator algorithms, buffer-pool management, write-ahead logging &amp; crash recovery, transaction &amp; lock management, and concurrent access.</p>
+					<div class="metrics">
+						<span class="metric"><b>10K+</b> <span data-en="TPS" data-zh="TPS">TPS</span></span>
+						<span class="metric"><b>&lt;10ms</b> <span data-en="avg query" data-zh="平均查询">avg query</span></span>
+						<span class="metric"><b>1000+</b> <span data-en="connections" data-zh="并发连接">connections</span></span>
+						<span class="metric"><b>&lt;30s</b> <span data-en="recovery" data-zh="故障恢复">recovery</span></span>
+					</div>
+					<div class="tags small">
+						<span class="tag">Go</span><span class="tag">WAL</span><span class="tag">MVCC</span><span class="tag">Transactions</span>
+					</div>
+				</article>
+
+				<article class="proj-card">
+					<div class="proj-head">
+						<h4 data-en="High-performance TCP/IP stack on DPDK" data-zh="基于 DPDK 的高性能 TCP/IP 协议栈">High-performance TCP/IP stack on DPDK</h4>
+						<a class="repo-link" href="https://github.com/luomingguo/computer-network-stack" target="_blank" rel="noopener" aria-label="GitHub repo">↗ Repo</a>
+					</div>
+					<p class="proj-date">2024.06 – 2024.10</p>
+					<p data-en="A simplified TCP/IP stack implemented from scratch — reliable byte stream, TCP sender/receiver, connection management, IP/Ethernet interfaces and a router. Achieves end-to-end communication across physical machines."
+						data-zh="从零实现的简化版 TCP/IP 协议栈，包括可靠字节流、TCP 收发器、连接管理、IP/Ethernet 接口与路由器，实现了跨物理机器的端到端通信。">A simplified TCP/IP stack implemented from scratch — reliable byte stream, TCP sender/receiver, connection management, IP/Ethernet interfaces and a router. Achieves end-to-end communication across physical machines.</p>
+					<div class="metrics">
+						<span class="metric"><b>1 Gbps</b> <span data-en="direct link" data-zh="直连链路">direct link</span></span>
+						<span class="metric"><b>40 Mbps</b> <span data-en="file transfer" data-zh="文件互传">file transfer</span></span>
+					</div>
+					<div class="tags small">
+						<span class="tag">C++</span><span class="tag">DPDK</span><span class="tag">TCP/IP</span>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- ===================== EDUCATION ===================== -->
+		<section id="education" class="block">
+			<h3 class="block-title"><span class="num">05</span> <span data-en="Education &amp; Continuous learning" data-zh="教育背景与持续学习">Education &amp; Continuous learning</span></h3>
+
+			<div class="edu-item">
+				<div class="edu-head">
+					<h4 data-en="Guangdong University of Technology" data-zh="广东工业大学">Guangdong University of Technology</h4>
+					<span class="tl-date">2014.09 – 2018.06</span>
+				</div>
+				<p class="tl-role" data-en="B.Eng. in Systems Engineering" data-zh="系统工程 本科">B.Eng. in Systems Engineering</p>
+			</div>
+
+			<div class="edu-item">
+				<div class="edu-head">
+					<h4>Self Online Learnning —— Massachusetts Institute of Technology (MIT)</h4>
+					<span class="tl-date">2023.09 – <span data-en="present" data-zh="至今">present</span></span>
+				</div>
+				<p class="tl-role" data-en="EECS — self-directed study via MIT OpenCourseWare" data-zh="EECS — 通过 MIT OpenCourseWare 线上自学">EECS — self-directed study via MIT OpenCourseWare</p>
+				<p class="edu-note">📔 <a href="https://luomingguo.github.io/mit-cs-notes/" target="_blank" rel="noopener">luomingguo.github.io/mit-cs-notes</a> — <span data-en="personal notes &amp; labs" data-zh="个人笔记与 lab">personal notes &amp; labs</span></p>
+				<div class="course-groups">
+					<div class="course-group">
+						<span class="cg-title" data-en="Systems" data-zh="计算机系统">Systems</span>
+						<span class="courses">Operating System Engineering (6.1810) · Computer Networks (6.5820) · Database Systems (6.830) · Distributed Systems (6.840) · Datacenter Computing (6.S984)</span>
+					</div>
+					<div class="course-group">
+						<span class="cg-title" data-en="Architecture &amp; Languages" data-zh="架构与语言">Architecture &amp; Languages</span>
+						<span class="courses">Computation Structures (6.1910) · Compiler Construction (6.1100)</span>
+					</div>
+					<div class="course-group">
+						<span class="cg-title" data-en="Theory" data-zh="理论计算机">Theory</span>
+						<span class="courses">Intro to Algorithms (6.1210) · Design &amp; Analysis of Algorithms (6.1220)</span>
+					</div>
+					<div class="course-group">
+						<span class="cg-title" data-en="Software Engineering" data-zh="软件工程">Software Engineering</span>
+						<span class="courses">Software Performance Engineering (6.1060) · Software Construction (6.1020)</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===================== CTA FOOTER ===================== -->
+		<section class="cta-footer">
+			<h3 data-en="Let's build something with real technical depth." data-zh="让我们一起打造具有技术壁垒的产品。">Let's build something with real technical depth.</h3>
+			<p data-en="I'm available for freelance and remote contracts. Tell me about your project — I'll reply within a day." data-zh="我目前可接受自由职业与远程合作。把你的项目告诉我，我会在一天内回复。">I'm available for freelance and remote contracts. Tell me about your project — I'll reply within a day.</p>
+			<div class="cta-row center">
+				<a class="btn btn-primary" href="mailto:lmg543137933@gmail.com">
+					<span data-en="Email me" data-zh="给我发邮件">Email me</span>
+				</a>
+				<a class="btn btn-ghost" href="https://github.com/luomingguo" target="_blank" rel="noopener">GitHub</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<span>© <span id="year"></span> Mingguo Luo</span>
+		<span class="sep">·</span>
+		<span data-en="Built with native HTML / CSS / JS" data-zh="使用原生 HTML / CSS / JS 构建">Built with native HTML / CSS / JS</span>
+	</footer>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>
