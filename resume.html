@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>罗明国 — 后端 / 全栈开发工程师 · 简历</title>
+
+	<!-- ============================================================
+	     这是一份「打印用」的中文 A4 简历，独立于网站首页。
+	     要修改内容：只改下面 <script id="resume-data"> 里的 data 对象即可，
+	     不用动 HTML 结构或 CSS。改完刷新页面 → Ctrl/Cmd+P → 另存为 PDF。
+	     右上角「紧凑 / 标准」可微调密度，帮你把简历压进 1~2 页。
+	     ============================================================ -->
+
+	<style>
+		/* ---------- A4 页面设置 ---------- */
+		@page {
+			size: A4;
+			margin: 12mm 14mm;
+		}
+
+		:root {
+			--ink: #1d2530;
+			--soft: #44505f;
+			--mute: #6b7686;
+			--line: #d7dce3;
+			--accent: #1a3c6e;
+			/* 密度变量：紧凑模式会被 JS 覆盖 */
+			--gap-section: 16px;
+			--gap-item: 11px;
+			--lh: 1.5;
+			--fs: 13.5px;
+		}
+
+		* { box-sizing: border-box; }
+
+		html, body { margin: 0; padding: 0; }
+
+		body {
+			font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+			color: var(--ink);
+			background: #eef0f3;
+			font-size: var(--fs);
+			line-height: var(--lh);
+		}
+
+		/* 屏幕上模拟 A4 纸张 */
+		.page {
+			width: 210mm;
+			min-height: 297mm;
+			margin: 18px auto;
+			padding: 16mm 16mm 14mm;
+			background: #fff;
+			box-shadow: 0 4px 24px rgba(0, 0, 0, .12);
+		}
+
+		/* ---------- 工具条（仅屏幕显示） ---------- */
+		.toolbar {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			display: flex;
+			gap: 8px;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			background: rgba(255, 255, 255, .85);
+			backdrop-filter: blur(6px);
+			border-bottom: 1px solid var(--line);
+		}
+		.toolbar button, .toolbar a {
+			font: inherit;
+			font-size: 13px;
+			padding: 7px 14px;
+			border-radius: 8px;
+			border: 1px solid var(--line);
+			background: #fff;
+			color: var(--ink);
+			cursor: pointer;
+			text-decoration: none;
+		}
+		.toolbar button:hover, .toolbar a:hover { border-color: var(--accent); color: var(--accent); }
+		.toolbar .primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+		.toolbar .hint { font-size: 12px; color: var(--mute); margin-left: 6px; }
+
+		/* ---------- 头部 ---------- */
+		.r-head { border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: var(--gap-section); }
+		.r-name { font-size: 1.9em; font-weight: 800; letter-spacing: 1px; margin: 0; }
+		.r-name .intent { font-size: .52em; font-weight: 600; color: var(--accent); margin-left: 12px; letter-spacing: 0; }
+		.r-contact { margin-top: 6px; color: var(--soft); font-size: .92em; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+		.r-contact a { color: var(--soft); text-decoration: none; }
+
+		/* ---------- 区块标题 ---------- */
+		.section { margin-bottom: var(--gap-section); }
+		.section-title {
+			font-size: 1.08em;
+			font-weight: 800;
+			color: var(--accent);
+			border-bottom: 1px solid var(--line);
+			padding-bottom: 4px;
+			margin: 0 0 9px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		.section-title::before {
+			content: "";
+			width: 4px; height: 14px;
+			background: var(--accent);
+			border-radius: 2px;
+		}
+
+		/* ---------- 自我评价 ---------- */
+		.summary { color: var(--soft); margin: 0; }
+
+		/* ---------- 技能 ---------- */
+		.skills { margin: 0; }
+		.skill-row { display: flex; margin-bottom: 4px; }
+		.skill-k { flex: 0 0 6.5em; font-weight: 700; color: var(--ink); }
+		.skill-v { color: var(--soft); }
+
+		/* ---------- 经历条目 ---------- */
+		.item { margin-bottom: var(--gap-item); break-inside: avoid; }
+		.item:last-child { margin-bottom: 0; }
+		.item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+		.item-title { font-weight: 700; font-size: 1.02em; }
+		.item-org { color: var(--accent); font-weight: 600; }
+		.item-meta { color: var(--soft); font-weight: 400; font-size: .92em; }
+		.item-date { color: var(--mute); font-size: .9em; white-space: nowrap; flex-shrink: 0; }
+		.item-sub { color: var(--soft); font-size: .92em; margin: 1px 0 5px; }
+		.points { margin: 4px 0 0; padding-left: 0; list-style: none; }
+		.points li { position: relative; padding-left: 14px; margin-bottom: 3px; color: var(--soft); }
+		.points li::before { content: "·"; position: absolute; left: 3px; color: var(--accent); font-weight: 900; }
+		.points li b { color: var(--ink); font-weight: 700; }
+		.honor { color: var(--ink); }
+		.repo { color: var(--mute); font-size: .9em; font-weight: 400; }
+
+		/* ---------- 打印 ---------- */
+		@media print {
+			body { background: #fff; font-size: 10.8pt; }
+			.toolbar { display: none !important; }
+			.page { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+			a { color: inherit; }
+			.section { break-inside: avoid-page; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- 工具条：打印 & 密度切换（不会被打印） -->
+	<div class="toolbar">
+		<button class="primary" id="printBtn">🖨️ 打印 / 导出 PDF</button>
+		<button id="densityBtn">紧凑模式</button>
+		<a href="index.html">← 返回网页版</a>
+		<span class="hint">提示：打印时浏览器里关闭「页眉页脚」、边距选「默认」</span>
+	</div>
+
+	<div class="page" id="page"></div>
+
+	<!-- ============================================================
+	     ↓↓↓ 改简历只改这里 ↓↓↓
+	     ============================================================ -->
+	<script id="resume-data">
+		const data = {
+			name: "罗明国",
+			intent: "后端 / 全栈开发工程师",
+			contacts: [
+				{ label: "📱 15521087658" },
+				{ label: "✉️ lmg543137933@gmail.com", link: "mailto:lmg543137933@gmail.com" },
+				{ label: "🔗 github.com/luomingguo", link: "https://github.com/luomingguo" },
+				{ label: "🌐 luomingguo.github.io", link: "https://luomingguo.github.io" },
+			],
+
+			summary:
+				"6 年以上后端研发经验，擅长云原生与分布式系统的设计与落地。精通 Go（5 年+），熟练 C/C++、Python、JavaScript，" +
+				"能编写高性能、可复用的工业级代码。强项为软件 / 系统设计，深入钻研编程语言、操作系统与框架底层；" +
+				"具备全流程 DevOps 能力（K8s、Docker、CI/CD、Prometheus、镜像仓库），主导过机房私有云搭建；英语听说读写流利。",
+
+			skills: [
+				{ k: "编程语言", v: "Go（主）、C / C++、Python、JavaScript / TypeScript" },
+				{ k: "分布式 / 后端", v: "微服务、API 网关、配置中心、Raft 共识、gRPC、消息队列、高可用" },
+				{ k: "数据与存储", v: "MongoDB、Redis、RDBMS 内核、事务 / MVCC、锁与并发控制" },
+				{ k: "云与 DevOps", v: "Kubernetes、Docker、CI / CD、Prometheus、私有云搭建" },
+				{ k: "系统与网络", v: "TCP/IP 协议栈、DPDK、Linux / ARM、嵌入式、协程调度、性能调优" },
+			],
+
+			work: [
+				{
+					org: "深信服科技股份有限公司",
+					role: "云平台开发 · SASE 研发部 & 组件中台部",
+					date: "2020.09 - 2024.04",
+					points: [
+						"国内首个落地的<b>云原生自研 SASE 解决方案</b>核心研发，推动安全堆栈业务从硬件交付转型为 SaaS，全程跟随立项、上线到稳定迭代。",
+						"负责多租户 / 微服务架构下的<b>控制面</b>：从方案预研、设计、编码到自动化测试与运维工具，实现高可用的<b>分布式 API 网关</b>与<b>配置中心</b>。",
+						"参与领域特定语言 Schema（类 protobuf）设计，统一各服务的配置描述。",
+						"参与运维平台研发与 CI/CD 流水线搭建，支撑「一周一迭代」的发布节奏并加固质量。",
+						"技术栈：K8s、Docker、MQ、Redis、MongoDB、C/C++、Go（主）、Python（测试 / DevOps）。",
+						"<span class='honor'>荣誉：半年度优秀员工；全员质量管理 Code Review 奖。</span>",
+					],
+				},
+				{
+					org: "极飞科技",
+					role: "嵌入式软件开发工程师 · 感知与控制部（广州）",
+					date: "2018.09 - 2020.09",
+					points: [
+						"负责植保无人机、无人车<b>机载系统平台</b>研发。",
+						"在 ARM 架构下实现轻量级、可定制的通用软件平台（<b>类 ROS</b>），稳定搭载算法等业务模块，开发各类传感器驱动与网络模块。",
+						"负责架构设计、接口设计与定制协议设计；参与<b>自适应组网通信</b>实现设备联动。",
+						"主导平台性能优化；协助实现基于<b>协程</b>（而非时间片）的任务调度模块，取得明显性能提升。",
+						"<span class='honor'>荣誉：公司产品质量奖（前 10%）。</span>",
+					],
+				},
+			],
+
+			projects: [
+				{
+					name: "分布式 KV 存储系统",
+					repo: "github.com/luomingguo/65840_distribution_systems",
+					points: [
+						"从零构建分布式键值存储，深入理解 PACELC 理论与分布式故障诊断；实现 Leader 选举、日志复制、崩溃恢复、分片迁移等核心组件。",
+						"成果：4C8G 环境下达 <b>12K QPS</b>，<b>P99 延迟 &lt; 10ms</b>。",
+					],
+				},
+				{
+					name: "TinyDB — 从零构建关系型数据库",
+					repo: "github.com/luomingguo/TinyDB",
+					date: "2025.05 - 至今",
+					points: [
+						"基于 Go 从零实现完整 RDBMS，掌握数据库内核技术：算子算法、缓冲池管理、WAL 日志与故障恢复、事务 / 锁管理、并发访问控制。",
+						"成果：<b>TPS 10,000+</b>；平均查询延迟 <b>&lt; 10ms</b>；支持 <b>1000+ 并发连接</b>；故障恢复 <b>&lt; 30s</b>。",
+					],
+				},
+				{
+					name: "基于 DPDK 的高性能 TCP/IP 协议栈",
+					repo: "github.com/luomingguo/computer-network-stack",
+					date: "2024.06 - 2024.10",
+					points: [
+						"从零实现简化版 TCP/IP 协议栈：可靠字节流、TCP 收发器、连接管理、IP/Ethernet 接口与路由器，实现跨物理机端到端通信。",
+						"成果：1Gbps 直连链路，文件互传效率 <b>40Mbps</b>。",
+					],
+				},
+			],
+
+			education: [
+				{
+					org: "广东工业大学",
+					role: "系统工程 · 本科",
+					date: "2014.09 - 2018.06",
+				},
+				{
+					org: "麻省理工学院 MIT（OpenCourseWare 线上自学）",
+					role: "电子工程与计算机科学 EECS",
+					date: "2023.09 - 至今",
+					points: [
+						"笔记 / Lab：luomingguo.github.io/mit-cs-notes",
+						"核心课程：操作系统工程(6.1810)、计算机网络(6.5820)、数据库系统(6.830)、分布式系统(6.840)、数据中心计算(6.S984)、计算结构(6.1910)、编译器原理(6.1100)、算法(6.1210 / 6.1220)、软件性能工程(6.1060)、软件工程(6.1020)。",
+					],
+				},
+			],
+		};
+	</script>
+	<!-- ============================================================
+	     ↑↑↑ 改简历只改上面 ↑↑↑
+	     ============================================================ -->
+
+	<script>
+		/* ---------- 渲染器：把 data 渲染成 A4 简历，无需手写 HTML ---------- */
+		(function () {
+			function esc(s) { return s == null ? "" : s; }
+
+			function pointsHtml(points) {
+				if (!points || !points.length) return "";
+				return '<ul class="points">' +
+					points.map(function (p) { return "<li>" + p + "</li>"; }).join("") +
+					"</ul>";
+			}
+
+			function workItem(it) {
+				return '<div class="item">' +
+					'<div class="item-head">' +
+						'<div class="item-title"><span class="item-org">' + esc(it.org) + '</span>' +
+						(it.role ? ' <span class="item-meta">· ' + esc(it.role) + '</span>' : '') + '</div>' +
+						'<div class="item-date">' + esc(it.date) + '</div>' +
+					'</div>' +
+					pointsHtml(it.points) +
+				'</div>';
+			}
+
+			function projItem(it) {
+				return '<div class="item">' +
+					'<div class="item-head">' +
+						'<div class="item-title">' + esc(it.name) +
+						(it.repo ? ' <span class="repo">· ' + esc(it.repo) + '</span>' : '') + '</div>' +
+						(it.date ? '<div class="item-date">' + esc(it.date) + '</div>' : '') +
+					'</div>' +
+					pointsHtml(it.points) +
+				'</div>';
+			}
+
+			function eduItem(it) {
+				return '<div class="item">' +
+					'<div class="item-head">' +
+						'<div class="item-title"><span class="item-org">' + esc(it.org) + '</span>' +
+						(it.role ? ' <span class="item-meta">· ' + esc(it.role) + '</span>' : '') + '</div>' +
+						'<div class="item-date">' + esc(it.date) + '</div>' +
+					'</div>' +
+					pointsHtml(it.points) +
+				'</div>';
+			}
+
+			function section(title, inner) {
+				return '<div class="section"><h2 class="section-title">' + title + '</h2>' + inner + '</div>';
+			}
+
+			var head =
+				'<div class="r-head">' +
+					'<h1 class="r-name">' + esc(data.name) +
+						(data.intent ? '<span class="intent">求职意向：' + esc(data.intent) + '</span>' : '') +
+					'</h1>' +
+					'<div class="r-contact">' +
+						data.contacts.map(function (c) {
+							return c.link
+								? '<a href="' + c.link + '">' + esc(c.label) + '</a>'
+								: '<span>' + esc(c.label) + '</span>';
+						}).join('') +
+					'</div>' +
+				'</div>';
+
+			var html = head;
+			if (data.summary) html += section("自我评价", '<p class="summary">' + data.summary + '</p>');
+			if (data.skills) html += section("专业技能",
+				'<div class="skills">' + data.skills.map(function (s) {
+					return '<div class="skill-row"><div class="skill-k">' + esc(s.k) + '</div><div class="skill-v">' + esc(s.v) + '</div></div>';
+				}).join('') + '</div>');
+			if (data.work) html += section("工作经历", data.work.map(workItem).join(''));
+			if (data.projects) html += section("项目经历", data.projects.map(projItem).join(''));
+			if (data.education) html += section("教育背景", data.education.map(eduItem).join(''));
+
+			document.getElementById("page").innerHTML = html;
+
+			/* ---------- 工具条交互 ---------- */
+			document.getElementById("printBtn").addEventListener("click", function () { window.print(); });
+
+			var root = document.documentElement;
+			var compact = localStorage.getItem("resume-compact") === "1";
+			var btn = document.getElementById("densityBtn");
+			function applyDensity() {
+				if (compact) {
+					root.style.setProperty("--gap-section", "11px");
+					root.style.setProperty("--gap-item", "7px");
+					root.style.setProperty("--lh", "1.4");
+					root.style.setProperty("--fs", "12.8px");
+					btn.textContent = "标准模式";
+				} else {
+					root.style.removeProperty("--gap-section");
+					root.style.removeProperty("--gap-item");
+					root.style.removeProperty("--lh");
+					root.style.removeProperty("--fs");
+					btn.textContent = "紧凑模式";
+				}
+			}
+			btn.addEventListener("click", function () {
+				compact = !compact;
+				localStorage.setItem("resume-compact", compact ? "1" : "0");
+				applyDensity();
+			});
+			applyDensity();
+		})();
+	</script>
+</body>
+
+</html>

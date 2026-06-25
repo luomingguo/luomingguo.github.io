@@ -50,12 +50,19 @@
 		});
 	}
 
-	/* ---------- Print / Download ---------- */
+	/* ---------- Print / Download ----------
+	   中文模式：跳到打印优化的中文 A4 简历页（resume.html），在那里导出 PDF。
+	   英文模式：暂无英文打印页，沿用浏览器打印当前页面。
+	   读取的是闭包里实时的 lang，所以会跟随当前语言。 */
 	var printBtn = document.getElementById('printBtn');
 	if (printBtn) {
 		printBtn.addEventListener('click', function (e) {
 			e.preventDefault();
-			window.print();
+			if (lang === 'zh') {
+				window.open('resume.html', '_blank');
+			} else {
+				window.print();
+			}
 		});
 	}
 
